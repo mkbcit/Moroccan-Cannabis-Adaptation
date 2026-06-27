@@ -1,10 +1,12 @@
-# Moroccan-Cannabis-Adaptation
-A reproducible population genomics and local adaptation pipeline for Cannabis sativa
 <div align="center">
 
-# 🌿 Moroccan-Cannabis-Adaptation
+# Moroccan-Cannabis-Adaptation
 
 ### A reproducible pipeline for population genomics, local adaptation, and genomic–phenotypic integration in *Cannabis sativa*
+
+**End-to-end Whole Genome Sequencing (WGS) analysis pipeline**
+
+**FASTQ → Variant Discovery → Population Genomics → Local Adaptation → GWAS → Publication-quality Figures**
 
 [![Linux](https://img.shields.io/badge/Linux-Ubuntu-blue?logo=linux)]()
 [![Python](https://img.shields.io/badge/Python-3.10+-yellow?logo=python)]()
@@ -13,18 +15,7 @@ A reproducible population genomics and local adaptation pipeline for Cannabis sa
 [![License](https://img.shields.io/badge/License-MIT-green)]()
 [![Status](https://img.shields.io/badge/Status-Active_Development-orange)]()
 
----
-
-**End-to-end Whole Genome Sequencing (WGS) analysis pipeline**
-
-**FASTQ → Variant Discovery → Population Genomics → Local Adaptation → GWAS → Publication-quality Figures**
-
----
-
-*A comprehensive workflow developed for the genomic characterization of the Moroccan Beldia Cannabis landrace and adaptable to other Cannabis populations and diploid plant species.*
-
 </div>
-
 ---
 
 # 📖 Overview
@@ -65,56 +56,20 @@ This pipeline was developed to answer the following biological questions:
 
 # ✨ Key Features
 
-## Population Genomics
+| Population Genomics | Genetic Diversity | Local Adaptation | Genomic–Phenotypic Integration |
+|---------|-------------|---------|-------------|
+|- Principal Component Analysis (PCA)|- Nucleotide diversity (π)|- Sliding-window FST|- Quantitative trait differentiation (QST)|
+|- Discriminant Analysis of Principal Components (DAPC)|- Expected heterozygosity (He)|- π-ratio|- QST vs FST|
+|- ADMIXTURE ancestry estimation|- Observed heterozygosity (Ho)|- Candidate gene identification|- Mantel test|
+|- Maximum Likelihood phylogeny|- Inbreeding coefficient (FIS)|- Functional annotation|- GWAS|
+|- Linkage Disequilibrium (LD)|- Tajima's D|- GO enrichment|- Candidate adaptive loci|
+|- Isolation-by-Distance (IBD)|- Pairwise FST|- KEGG enrichment|- Integrated evolutionary interpretation|
+|- AMOVA||- XP-EHH||
+|||- iHS||
+|||- LFMM||
+|||- Redundancy Analysis (RDA)||
 
-- Principal Component Analysis (PCA)
-- Discriminant Analysis of Principal Components (DAPC)
-- ADMIXTURE ancestry estimation
-- Maximum Likelihood phylogeny
-- Linkage Disequilibrium (LD)
-- Isolation-by-Distance (IBD)
-- AMOVA
-
----
-
-## Genetic Diversity
-
-- Nucleotide diversity (π)
-- Expected heterozygosity (He)
-- Observed heterozygosity (Ho)
-- Inbreeding coefficient (FIS)
-- Tajima's D
-- Pairwise FST
-
----
-
-## Local Adaptation
-
-- Sliding-window FST
-- π-ratio
-- Candidate gene identification
-- Functional annotation
-- GO enrichment
-- KEGG enrichment
-
-Optional modules
-
-- XP-EHH
-- iHS
-- LFMM
-- Redundancy Analysis (RDA)
-
----
-
-## Genomic–Phenotypic Integration
-
-- Quantitative trait differentiation (QST)
-- QST vs FST
-- Mantel test
-- GWAS
-- Candidate adaptive loci
-- Integrated evolutionary interpretation
-
+ 
 ---
 
 ## Publication Outputs
@@ -157,18 +112,12 @@ The workflow automatically generates:
 
 # 📦 Expected Outputs
 
-The pipeline produces:
-
-✅ High-quality SNP datasets
-✅ Population structure analyses
-✅ Genetic diversity statistics
-✅ Phylogenetic trees
-✅ Selection scan results
-✅ Candidate adaptive genes
-✅ Functional enrichment analyses
-✅ GWAS results
-✅ Publication-ready figures
-✅ Supplementary tables
+| The pipeline produces | | | |
+|---------|-------------|---------|-------------|
+|✅ High-quality SNP datasets|✅ Population structure analyses|✅ Genetic diversity statistics|
+|✅ Phylogenetic trees|✅ Selection scan results|✅ Candidate adaptive genes|
+|✅ Functional enrichment analyses|✅ GWAS results|✅ Publication-ready figures|
+|✅ Supplementary tables|
 
 ---
 
@@ -328,27 +277,14 @@ Moroccan-Cannabis-Adaptation/
 ---
 
 ## Hardware Requirements
-
-### Minimum
-
-| Resource | Requirement |
-|----------|-------------|
-| CPU | 8 cores |
-| RAM | 32 GB |
-| Storage | 500 GB |
-| Operating System | Linux |
-
----
-
-### Recommended
-
-| Resource | Requirement |
-|----------|-------------|
-| CPU | 32–64 cores |
-| RAM | 128–512 GB |
-| Storage | 2 TB SSD |
-| HPC Cluster | SLURM |
-
+|  Resource | Minimum |  | Recommended|
+|---------|-------------|---------|-------------|
+| CPU | 8 cores |   | 32–64 cores |
+| RAM | 32 GB |   | 128–512 GB |
+| Storage | 500 GB |  | 2 TB SSD |
+| Operating System | Linux |   |   |
+| HPC Cluster |  |   | SLURM |
+ 
 ---
 
 ### Large Population Studies
@@ -387,40 +323,16 @@ Moroccan-Cannabis-Adaptation/
 
 ---
 
-## R Packages
-
-- adegenet
-- poppr
-- hierfstat
-- dartR
-- SNPRelate
-- ggplot2
-- tidyverse
-- data.table
-- vegan
-- lme4
-- qqman
-- GAPIT3
-- circlize
-- ComplexHeatmap
-- ggtree
-- patchwork
+ 
+| ## | R |  Packages ||| ## | Python |  Packages |   |
+|----------|---------|----------|---------|----------|---------|----------|---------|---------|
+|- adegenet|- poppr|- hierfstat|- dartR||- pandas|- numpy|- scipy|- matplotlib|
+|- SNPRelate|- ggplot2|- tidyverse|- data.table||- plotly|- scikit-allel|- biopython|- seaborn|
+|- vegan|- lme4|- qqman|- GAPIT3||- jupyter|
+|- circlize|- ComplexHeatmap|- ggtree|- patchwork|
 
 ---
 
-## Python Packages
-
-- pandas
-- numpy
-- scipy
-- matplotlib
-- plotly
-- scikit-allel
-- biopython
-- seaborn
-- jupyter
-
----
 
 # ⚙️ Installation
 
@@ -710,61 +622,9 @@ The pipeline automatically generates publication-ready figures corresponding to 
 
 ---
 
-# 📈 Scientific Workflow
+# 📈 Workflow
 
-```text
-Whole Genome Sequencing
-           │
-           ▼
-Quality Control
-           │
-           ▼
-Read Alignment
-           │
-           ▼
-Variant Calling
-           │
-           ▼
-High-quality SNP Dataset
-           │
-           ▼
-────────────────────────────────────────────
-Population Genomics
-────────────────────────────────────────────
-
-Population Structure
-
-Genetic Diversity
-
-Phylogenetic Analysis
-
-Population Differentiation
-
-           │
-           ▼
-────────────────────────────────────────────
-Adaptive Evolution
-────────────────────────────────────────────
-
-Selection Scans
-
-Candidate Genes
-
-Functional Annotation
-
-GWAS
-
-Genotype–Phenotype Integration
-
-           │
-           ▼
-Publication-quality Figures
-
-           │
-           ▼
-
-Biological Interpretation
-```
+<img width="1024" height="583" alt="github_cannabis_pipeline000" src="https://github.com/user-attachments/assets/45fb8174-0d4c-43cb-b97a-2a3280e1aadb" />
 
 ---
 
